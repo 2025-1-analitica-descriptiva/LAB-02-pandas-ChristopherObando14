@@ -19,5 +19,11 @@ def pregunta_03():
     D     6
     E    14
     Name: count, dtype: int64
-
     """
+    import pandas as pd
+
+    df = pd.read_csv('files/input/tbl0.tsv', sep='\t')
+    conteo = df['c1'].value_counts().sort_index()
+    return conteo
+
+
