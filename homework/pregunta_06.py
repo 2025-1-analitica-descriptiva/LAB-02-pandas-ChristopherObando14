@@ -8,10 +8,15 @@ librerias de pandas para resolver las preguntas.
 
 def pregunta_06():
     """
-    Retorne una lista con los valores unicos de la columna `c4` del archivo
-    `tbl1.csv` en mayusculas y ordenados alfabéticamente.
+    Retorne una lista con los valores únicos de la columna `c4` del archivo
+    `tbl1.tsv` en mayúsculas y ordenados alfabéticamente.
 
     Rta/
     ['A', 'B', 'C', 'D', 'E', 'F', 'G']
-
     """
+    import pandas as pd
+
+    df = pd.read_csv('files/input/tbl1.tsv', sep='\t')
+    valores_unicos = df['c4'].str.upper().unique()
+    valores_ordenados = sorted(valores_unicos)
+    return list(valores_ordenados)
